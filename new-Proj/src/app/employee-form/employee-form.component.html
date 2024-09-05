@@ -1,0 +1,24 @@
+<div>
+  <h2>{{ isEditMode ? 'Edit Employee' : 'Add Employee' }}</h2>
+  <form (ngSubmit)="save()">
+    <div>
+      <label>Name:</label>
+      <input [(ngModel)]="employee.employeeName" name="employeeName" required />
+    </div>
+    <div>
+      <label>Salary:</label>
+      <input [(ngModel)]="employee.salary" name="salary" required />
+    </div>
+    <div>
+      <label>Designation:</label>
+      <input [(ngModel)]="employee.designation" name="designation" required />
+    </div>
+    <div>
+      <label>Employment Type:</label>
+      <input [(ngModel)]="employee.employmentType" name="employmentType" required />
+    </div>
+    <button type="submit">{{ isEditMode ? 'Update' : 'Create' }}</button>
+    <button (click)="router.navigate(['/'])">Cancel</button>
+  </form>
+</div>
+
